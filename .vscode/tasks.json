@@ -20,7 +20,7 @@
         {
             "label": "Update",
             "type": "shell",
-            "command": "plasmapkg2 -u ./package",
+            "command": "plasmapkg2 -u ./package; killall plasmashell; kstart5 plasmashell",
             "group": "build",
             "problemMatcher": []
         },
