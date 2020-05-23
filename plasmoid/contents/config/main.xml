@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+  <kcfgfile name=""/>
+  <group name="General">
+    <entry name="startupScript" type="String">
+      <label>Script or command to execute on startup</label>
+      <default>exit 0</default>
+    </entry>
+    <entry name="onScript" type="String">
+      <label>Script or command to execute when toggled On</label>
+      <default>lookandfeeltool -a org.kde.breezedark.desktop</default>
+    </entry>
+    <entry name="offScript" type="String">
+      <label>Script or command to execute when toggled Off</label>
+      <default>lookandfeeltool -a org.kde.breeze.desktop</default>
+    </entry>
+  </group>
+</kcfg> 
