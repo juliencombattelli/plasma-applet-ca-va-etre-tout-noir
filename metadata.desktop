@@ -1,16 +1,16 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Il va faire tout noir
-Comment=Plasmoid to switch between Light and Dark theme.
+Name=Ça va être tout noir
+Comment=Configurable On/Off Switch.
 Type=Service
+Icon=configure
 
-X-KDE-ParentApp=
 X-KDE-PluginInfo-Author=juliencombattelli
 X-KDE-PluginInfo-Email=julien.combattelli@gmail.com
 X-KDE-PluginInfo-License=GPL2
-X-KDE-PluginInfo-Name=com.github.juliencombattelli.ilVaFaireToutNoir
+X-KDE-PluginInfo-Name=com.github.juliencombattelli.caVaEtreToutNoir
 X-KDE-PluginInfo-Version=0.1
-X-KDE-PluginInfo-Website=https://github.com/juliencombattelli/plasma-applet-il-va-faire-tout-noir
+X-KDE-PluginInfo-Website=https://github.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir
 X-KDE-ServiceTypes=Plasma/Applet
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
