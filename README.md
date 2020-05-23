@@ -34,6 +34,7 @@ An in-panel switch On and Off with Breeze Dark theme:
 ![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/in-panel_breeze-dark_on.png) ![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/in-panel_breeze-dark_off.png)
 
 The settings window:
+
 ![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/settings.png)
 
 ## Credit
