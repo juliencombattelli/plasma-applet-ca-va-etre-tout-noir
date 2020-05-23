@@ -6,28 +6,28 @@
         {
             "label": "Test",
             "type": "shell",
-            "command": "plasmoidviewer --applet .",
+            "command": "plasmoidviewer --applet ./package",
             "group": "build",
             "problemMatcher": []
         },
         {
             "label": "Install",
             "type": "shell",
-            "command": "plasmapkg2 -i .",
+            "command": "plasmapkg2 -i ./package",
             "group": "build",
             "problemMatcher": []
         },
         {
             "label": "Update",
             "type": "shell",
-            "command": "plasmapkg2 -u .",
+            "command": "plasmapkg2 -u ./package",
             "group": "build",
             "problemMatcher": []
         },
         {
             "label": "Remove",
             "type": "shell",
-            "command": "plasmapkg2 -r .",
+            "command": "plasmapkg2 -r ./package",
             "group": "build",
             "problemMatcher": []
         },
