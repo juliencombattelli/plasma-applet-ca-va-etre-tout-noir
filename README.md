@@ -43,11 +43,6 @@ An example application is provided in example/ folder. It implements a switch be
 
 To install the example application, go into example/, run `./install.sh` and follow the instructions.
 
-## To do
-
-* Example: replace symbolic link for example konsole profiles with Parent relationship
-* Example: create ~/.config/Code/User/settings.json if it does not exists
-
 ## Credit
 
 * https://github.com/pmarki/plasmoid-button
