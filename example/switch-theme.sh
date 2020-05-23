@@ -19,7 +19,7 @@ fi
 lookandfeeltool -a $LAF
 
 # Set Konsole profile for new instances
-ln -fs ~/.local/share/konsole/$KONSOLE_PROFILE.profile ~/.local/share/konsole/Jucom.profile
+sed -i "s/Parent=.*/Parent=$KONSOLE_PROFILE/" ~/.local/share/konsole/Default.profile
 
 # Set Konsole profile for all sessions in all existing konsole instances
 for konsole_instance in $(pidof konsole); do

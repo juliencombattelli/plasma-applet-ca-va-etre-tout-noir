@@ -1,1 +1,3 @@
-./Dark.profile
+[General]
+Name=Default
+Parent=Dark
