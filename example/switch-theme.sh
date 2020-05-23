@@ -39,7 +39,9 @@ done
 
 # Update VSCode theme
 VSCODE_SETTINGS_FILE=~/.config/Code/User/settings.json
-if ! grep "workbench\.colorTheme" $VSCODE_SETTINGS_FILE &>/dev/null; then # If theme setting is not set
+if ! test -f $VSCODE_SETTINGS_FILE; then # If setting file does not exist
+    printf "{\n    \"workbench.colorTheme\": \"$VSCODE_THEME\"\n}\n" > $VSCODE_SETTINGS_FILE
+elif ! grep "workbench\.colorTheme" $VSCODE_SETTINGS_FILE &>/dev/null; then # If theme setting is not set
     fileLength=$(wc -l $VSCODE_SETTINGS_FILE | cut -d' ' -f1); \
     sed -i "$((fileLength-1))s/$/,/; ${fileLength}i \ \ \ \ \"workbench.colorTheme\": \"$VSCODE_THEME\"" $VSCODE_SETTINGS_FILE
 else # If theme setting already sets
