@@ -23,6 +23,20 @@ The plasmoid can be configured in its Settings menu:
 * On-Script: Script or code snippets called when turned on
 * Off-Script: Script or code snippets called when turned off
 
+## Images
+
+An in-panel switch On and Off with Breeze Light theme:
+
+![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/in-panel_breeze-light_on.png) ![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/in-panel_breeze-light_off.png)
+
+An in-panel switch On and Off with Breeze Dark theme:
+
+![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/in-panel_breeze-dark_on.png) ![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/in-panel_breeze-dark_off.png)
+
+The settings window:
+
+![](https://raw.githubusercontent.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/master/images/settings.png)
+
 ## Credit
 
 * https://github.com/pmarki/plasmoid-button
