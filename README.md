@@ -41,7 +41,7 @@ The Settings window:
 
 An example application is provided in example/ folder. It implements a switch between a Dark and a Light theme working on Plasma, Konsole and Visual Studio Code. Before testing it, be sure to backup your personal data in case of trouble (~/.local/share/konsole/ and ~/.config/Code/User/ folders).
 
-To install the example application, go into example/ and run `./install.sh` and follow the instructions.
+To install the example application, go into example/, run `./install.sh` and follow the instructions.
 
 ## To do
 
