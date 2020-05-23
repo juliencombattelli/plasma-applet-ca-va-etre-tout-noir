@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "plasmoidviewer --applet ./plasmoid",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Install",
+            "type": "shell",
+            "command": "plasmapkg2 -i ./plasmoid",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Update",
+            "type": "shell",
+            "command": "plasmapkg2 -u ./plasmoid; killall plasmashell; kstart5 plasmashell",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Remove",
+            "type": "shell",
+            "command": "plasmapkg2 -r ./plasmoid",
+            "group": "build",
+            "problemMatcher": []
+        },
+    ]
+}
