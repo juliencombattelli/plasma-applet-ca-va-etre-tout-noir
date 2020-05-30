@@ -1,42 +1,34 @@
-# This workflows will upload a Python Package using Twine when a release is created
-# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
-
 name: Package
 
 on:
   push:
-    branches:
-      - ci
   pull_request:
-    branches:
-      - ci
   release:
     types:
       - created
 
-env:
-  GITHUB_TOKEN: ${{ github.token }}
-
 jobs:
-  deploy:
+  package:
 
     runs-on: ubuntu-latest
+    
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      ARTIFACT_NAME: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+      ARTIFACT_TYPE: application/zip
 
     steps:
     - uses: actions/checkout@v2
-      
-    - name: Install dependencies
-      run: echo "Installing dependencies"
     
-    - name: Package
-      run: zip -r -FS com.github.juliencombattelli.caVaEtreToutNoir.plasmoid ./package/
+    - name: Package artifacts
+      run: zip -r -FS ${{ env.ARTIFACT_NAME }} ./package/
     
     - name: Upload commit assets
       if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
       uses: actions/upload-artifact@v2
       with:
-        path: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
-        name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+        path: ${{ env.ARTIFACT_NAME }}
+        name: ${{ env.ARTIFACT_NAME }}
     
     - name: Get release url
       if: ${{ github.event_name == 'release' }}
@@ -48,7 +40,7 @@ jobs:
       uses: actions/upload-release-asset@v1.0.2
       with:
         upload_url: ${{ steps.get_release.outputs.upload_url }}
-        asset_path: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
-        asset_name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
-        asset_content_type: application/zip
+        asset_path: ${{ env.ARTIFACT_NAME }}
+        asset_name: ${{ env.ARTIFACT_NAME }}
+        asset_content_type: ${{ env.ARTIFACT_TYPE }}
       
