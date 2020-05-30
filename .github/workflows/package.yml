@@ -15,9 +15,8 @@ jobs:
     - name: Install dependencies
       run: echo "Installing dependencies"
     - name: Package
-      run: zip -r -FS build/com.github.juliencombattelli.caVaEtreToutNoir.plasmoid ./package/
+      run: zip -r -FS com.github.juliencombattelli.caVaEtreToutNoir.plasmoid ./package/
     - name: Upload
       uses: actions/upload-artifact@v1
       with:
-        path: ./build
         name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
