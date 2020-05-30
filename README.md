@@ -43,6 +43,12 @@ An example application is provided in example/ folder. It implements a switch be
 
 To install the example application, go into example/, run `./install.sh` and follow the instructions.
 
+## Todo
+
+* Publish firefox extension
+* Install nativeMessaging python app, theme-switcher.sh in .local/bin
+* Install theme watcher file in a persistent directory (.cache/org.github.julien.../theme)
+
 ## Credit
 
 * https://github.com/pmarki/plasmoid-button
