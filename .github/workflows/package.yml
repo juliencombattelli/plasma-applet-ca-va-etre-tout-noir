@@ -6,10 +6,10 @@ name: Package
 on:
   push:
     branches:
-      - master
+      - ci
   pull_request:
     branches:
-      - master
+      - ci
   release:
     types:
       - created
