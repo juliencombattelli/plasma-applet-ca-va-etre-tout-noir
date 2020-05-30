@@ -3,7 +3,16 @@
 
 name: Package
 
-on: [push, pull_request, release]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  release:
+    types:
+      - created
 
 jobs:
   deploy:
@@ -12,12 +21,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Install dependencies
       run: echo "Installing dependencies"
+    
     - name: Package
       run: zip -r -FS com.github.juliencombattelli.caVaEtreToutNoir.plasmoid ./package/
-    - name: Upload
+    
+    - name: Upload commit assets
+      if: ${{ github.event_name == 'push' || github.event_name == == 'pull_request' }}
       uses: actions/upload-artifact@v2
       with:
         path: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
         name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+    
+    - name: Upload release assets
+      if: ${{ github.event_name == 'release' }}
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: https://github.com/juliencombattelli/plasma-applet-ca-va-etre-tout-noir/releases/tag/${{ GITHUB_REF  }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+        asset_name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+        asset_content_type: application/zip
