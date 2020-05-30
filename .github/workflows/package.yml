@@ -37,4 +37,4 @@ jobs:
     
     - name: Upload release assets
       if: ${{ github.event_name == 'release' }}
-      run: echo "ref ${{ env.GITHUB_REF  }}"
+      run: echo "ref ${GITHUB_REF##*/}"
