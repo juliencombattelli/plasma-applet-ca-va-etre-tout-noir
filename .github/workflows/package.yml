@@ -1,0 +1,23 @@
+# This workflows will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+name: Upload Python Package
+
+on: [push, pull_request]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: echo "Installing dependencies"
+    - name: Package
+      run: zip -r -FS build/com.github.juliencombattelli.caVaEtreToutNoir.plasmoid ./package/
+    - name: Upload
+      uses: actions/upload-artifact@v1
+      with:
+        path: ./build
+        name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
