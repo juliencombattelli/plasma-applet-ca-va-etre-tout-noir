@@ -34,7 +34,11 @@ jobs:
       with:
         path: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
         name: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
-    
+    - name: Get release url
+      if: ${{ github.event_name == 'release' }}
+      id: get_release
+      uses: bruceadams/get-release@v1
     - name: Upload release assets
       if: ${{ github.event_name == 'release' }}
-      run: echo "ref ${GITHUB_REF##*/}"
+      run: echo "ref ${GITHUB_REF##*/}, url ${{ steps.get_release.outputs.upload_url }}"
+      
