@@ -1,7 +1,0 @@
-{
-  "name": "ping_pong",
-  "description": "Example host for native messaging",
-  "path": "/home/jucom/Development/Kde/Plasmoids/plasma-applet-ca-va-etre-tout-noir/firefox-extension/native-messaging/app/ping_pong.py",
-  "type": "stdio",
-  "allowed_extensions": [ "ping_pong@example.org" ]
-}

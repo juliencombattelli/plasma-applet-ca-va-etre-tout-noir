@@ -1,0 +1,7 @@
+{
+  "name": "switch_theme_bridge_host",
+  "description": "Host application for theme-switch-bridge add-on",
+  "path": "/home/jucom/.local/bin/switch-theme-bridge-host.py",
+  "type": "stdio",
+  "allowed_extensions": [ "switch-theme-bridge.cavafairetoutnoir@github.com" ]
+}

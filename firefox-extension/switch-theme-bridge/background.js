@@ -1,7 +1,7 @@
 /*
-On startup, connect to the "ping_pong" app.
+On startup, connect to the host app.
 */
-var port = browser.runtime.connectNative("ping_pong");
+var port = browser.runtime.connectNative("switch_theme_bridge_host");
 
 /*
 Listen for messages from the app.
