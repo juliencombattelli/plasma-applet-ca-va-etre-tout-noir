@@ -47,3 +47,7 @@ elif ! grep "workbench\.colorTheme" $VSCODE_SETTINGS_FILE &>/dev/null; then # If
 else # If theme setting already sets
     sed -i "s/\(workbench.colorTheme.*\"\).*\(\".*\)/\1$VSCODE_THEME\2/" $VSCODE_SETTINGS_FILE
 fi
+
+# Update setting file for watchers
+mkdir -p ~/.cache/com.github.juliencombattelli.caVaEtreToutNoir/theme
+echo $THEME > ~/.cache/com.github.juliencombattelli.caVaEtreToutNoir/theme/setting

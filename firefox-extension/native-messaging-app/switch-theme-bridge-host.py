@@ -31,10 +31,10 @@ def sendMessage(encodedMessage):
     sys.stdout.buffer.write(encodedMessage['content'])
     sys.stdout.buffer.flush()
 
-FNAME = "/tmp/theme"
+FNAME = "~/.cache/com.github.juliencombattelli.caVaEtreToutNoir/theme"
 
 def handler(signum, frame):
-    with open('/tmp/theme/setting') as theme:
+    with open(f'{FNAME}/setting') as theme:
         sendMessage(encodeMessage(f"{theme.readline()}"))
 
 signal.signal(signal.SIGIO, handler)
