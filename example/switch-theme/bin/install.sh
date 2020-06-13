@@ -31,7 +31,10 @@ cp "$INSTALLER_ROOT"/share/firefox-extension/native-messaging-app/switch-theme-b
     ~/.local/bin/
 
 printf "Installing switch-theme-bridge firefox add-on"
-firefox ./*.xpi
+firefox "$INSTALLER_ROOT"/share/firefox-extension/*.xpi
+
+printf "Installing plasmoid"
+plasmapkg2 --install "$INSTALLER_ROOT"/share/plasmoid/com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
 
 printf "\nIn the plasmoid settings:\n"
 printf " - set On-Script to ~/.local/bin/switch-theme.sh Dark\n"
