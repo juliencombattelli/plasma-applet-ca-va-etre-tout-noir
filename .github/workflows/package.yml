@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install dependencies
-      run: npm install web-ext
+      run: npm install --global web-ext
     
     - name: Package artifacts
       run: ./package-artifacts.sh -i ${{ secrets.AMO_JWT_ISSUER }} -s ${{ secrets.AMO_JWT_SECRET }} -p ${{ env.PLASMOID_NAME }} -a ${{ env.ARTIFACT_NAME }}
