@@ -14,14 +14,15 @@ jobs:
     
     env:
       GITHUB_TOKEN: ${{ github.token }}
-      ARTIFACT_NAME: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+      PLASMOID_NAME: com.github.juliencombattelli.caVaEtreToutNoir.plasmoid
+      ARTIFACT_NAME: theme-switcher.zip
       ARTIFACT_TYPE: application/zip
 
     steps:
     - uses: actions/checkout@v2
     
     - name: Package artifacts
-      run: zip -r -FS ${{ env.ARTIFACT_NAME }} ./package/
+      run: ./package-artifact.sh -i ${{ secrets.AMO_JWT_ISSUER }} -s ${{ secrets.AMO_JWT_SECRET }} -p ${{ env.PLASMOID_NAME }} -a ${{ env.ARTIFACT_NAME }}
     
     - name: Upload commit assets
       if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
