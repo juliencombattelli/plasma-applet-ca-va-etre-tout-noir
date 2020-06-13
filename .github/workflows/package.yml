@@ -26,6 +26,7 @@ jobs:
         npm install web-ext
         npm config get prefix
         echo $PATH
+        ls -la /usr/local/bin
     
     - name: Package artifacts
       run: ./package-artifacts.sh -i ${{ secrets.AMO_JWT_ISSUER }} -s ${{ secrets.AMO_JWT_SECRET }} -p ${{ env.PLASMOID_NAME }} -a ${{ env.ARTIFACT_NAME }}
