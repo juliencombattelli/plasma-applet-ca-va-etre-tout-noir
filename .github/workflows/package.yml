@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Package artifacts
-      run: ./package-artifact.sh -i ${{ secrets.AMO_JWT_ISSUER }} -s ${{ secrets.AMO_JWT_SECRET }} -p ${{ env.PLASMOID_NAME }} -a ${{ env.ARTIFACT_NAME }}
+      run: ./package-artifacts.sh -i ${{ secrets.AMO_JWT_ISSUER }} -s ${{ secrets.AMO_JWT_SECRET }} -p ${{ env.PLASMOID_NAME }} -a ${{ env.ARTIFACT_NAME }}
     
     - name: Upload commit assets
       if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
