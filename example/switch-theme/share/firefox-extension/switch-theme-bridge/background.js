@@ -1,7 +1,8 @@
 /*
-On startup, connect to the host app.
+On startup, connect to the host app and query current theme
 */
 var port = browser.runtime.connectNative("switch_theme_bridge_host");
+port.postMessage("theme?");
 
 /*
 Listen for messages from the app.

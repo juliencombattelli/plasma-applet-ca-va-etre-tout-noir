@@ -18,8 +18,7 @@ def getMessage():
     message = sys.stdin.buffer.read(messageLength).decode('utf-8')
     return json.loads(message)
 
-# Encode a message for transmission,
-# given its content.
+# Encode a message for transmission, given its content.
 def encodeMessage(messageContent):
     encodedContent = json.dumps(messageContent).encode('utf-8')
     encodedLength = struct.pack('@I', len(encodedContent))
@@ -33,9 +32,12 @@ def sendMessage(encodedMessage):
 
 FNAME = "~/.cache/com.github.juliencombattelli.caVaEtreToutNoir/theme"
 
-def handler(signum, frame):
+def sendTheme():
     with open(f'{FNAME}/setting') as theme:
         sendMessage(encodeMessage(f"{theme.readline()}"))
+
+def handler(signum, frame):
+    sendTheme()
 
 signal.signal(signal.SIGIO, handler)
 fd = os.open(FNAME,  os.O_RDONLY)
@@ -43,4 +45,6 @@ fcntl.fcntl(fd, fcntl.F_SETSIG, 0)
 fcntl.fcntl(fd, fcntl.F_NOTIFY, fcntl.DN_MODIFY | fcntl.DN_CREATE | fcntl.DN_MULTISHOT)
 
 while True:
-    time.sleep(10000)
+    receivedMessage = getMessage()
+    if receivedMessage == "theme?":
+        sendTheme()
