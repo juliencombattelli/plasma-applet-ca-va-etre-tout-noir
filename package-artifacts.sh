@@ -64,7 +64,9 @@ EXISTING_EXT_VERSIONS=($(ls $EXTENSION_FOLDER | sed 's/.*\([0-9]\+\.[0-9]\+\).*/
 
 # Package and sign the extension if not existing yet
 if [[ ! " ${EXISTING_EXT_VERSIONS[@]} " =~ " $CURRENT_EXT_VERSION " ]]; then      
+    cd example/switch-theme/share/firefox-extension/switch-theme-bridge
     web-ext sign --api-key=${AMO_ISSUER} --api-secret=${AMO_SECRET}
+    cd -
 fi
 
 EXTENSION_FILE=$EXTENSION_FOLDER/switch_theme_bridge-$CURRENT_EXT_VERSION-an+fx.xpi
