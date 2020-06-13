@@ -82,7 +82,9 @@ cp example/switch-theme/share/konsole/* tmp-artifact/share/konsole/
 cp example/switch-theme/share/firefox-extension/native-messaging-app/* tmp-artifact/share/firefox-extension/native-messaging-app/
 cp $EXTENSION_FILE tmp-artifact/share/firefox-extension/
 mv ${PLASMOID_NAME} tmp-artifact/share/plasmoid/
-zip -r -FS ${ARTIFACT_NAME} tmp-artifact/
+cd tmp-artifact
+zip -r -FS ../${ARTIFACT_NAME} .
+cd -
 
 ###############################################################################
 ### Cleanup
