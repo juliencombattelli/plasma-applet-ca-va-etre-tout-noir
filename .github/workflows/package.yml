@@ -20,9 +20,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
 
     - name: Install dependencies
-      run: npm install --global web-ext
+      run: npm install web-ext
     
     - name: Package artifacts
       run: ./package-artifacts.sh -i ${{ secrets.AMO_JWT_ISSUER }} -s ${{ secrets.AMO_JWT_SECRET }} -p ${{ env.PLASMOID_NAME }} -a ${{ env.ARTIFACT_NAME }}
