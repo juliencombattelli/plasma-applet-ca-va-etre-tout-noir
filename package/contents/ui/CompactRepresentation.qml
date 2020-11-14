@@ -6,6 +6,7 @@ import org.kde.plasma.components 3.0 as PlasmaComponent
 PlasmaComponent.Switch {
     property string onScript: Plasmoid.configuration.onScript
     property string offScript: Plasmoid.configuration.offScript
+    checked: Plasmoid.configuration.state
 
     PlasmaCore.DataSource {
         id: executable
@@ -41,9 +42,5 @@ PlasmaComponent.Switch {
         } else {
             executable.exec(offScript)
         }
-    }
-
-    Component.onCompleted: {
-        checked = Plasmoid.configuration.state
     }
 }
